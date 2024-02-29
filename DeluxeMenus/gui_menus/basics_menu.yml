@@ -349,7 +349,7 @@ items:
     lore:
     - ''
     left_click_commands:
-    - '[message] &6Developing.'
+    - '[player] opshop2'
   '15':
     material: barrier
     slot: 38
