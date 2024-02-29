@@ -1,0 +1,157 @@
+#  A DeluxeMenus advanced configuration guide
+#=========================================================
+menu_title: '&6&lRanks'
+open_command:
+  - rank
+  - rankup
+  - rshop
+open_commands:
+  - '[sound] BLOCK_COMPARATOR_CLICK'
+size: 27
+# as always, only cool people can open this menu :)
+items:
+  'fill1':
+    material: BLUE_STAINED_GLASS_PANE
+    data: 0
+    slots:
+      - 0
+      - 8
+      - 18
+      - 26
+    priority: 1
+    update: false
+    hide_attributes: true
+    display_name: ' '
+  'fill2':
+    material: LIGHT_BLUE_STAINED_GLASS_PANE
+    data: 0
+    slots:
+      - 1
+      - 7
+      - 9
+      - 17
+      - 19
+      - 25
+    priority: 1
+    update: false
+    hide_attributes: true
+    display_name: ' '
+  'fill3':
+    material: GRAY_STAINED_GLASS_PANE
+    data: 0
+    slots:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+    priority: 1
+    update: false
+    hide_attributes: true
+    display_name: ' '
+  'emerald':
+    material: NAME_TAG
+    data: 0
+    slot: 11
+    priority: 1
+    update: false
+    hide_attributes: true
+    display_name: '&f[&e&lVIP]&f Perks'
+    lore:
+      - ''
+      - '&7*&d&l PERKS:'
+      - ''
+      - ' &8➠ &b/anvil'
+      - ' &8➠ &b/cartographytable'
+      - ' &8➠ &b/enderchest'
+      - ''
+      - ' &8➦ &aPrice&8: &b5 Million $'
+      - ''
+      - '&aClick to buy now!'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 5000000
+          deny_commands:
+          - '[message] &4&lDarkVoid &8> &7You need &b5 Million $ &fto buy &a[VIP]'
+    left_click_commands:
+    - '[console] eco take %player_name% 5000000'
+    - '[console] lp user %player_name% parent set vip' 
+    - '[console] broadcast %player_name%&b Bought &a[VIP], &e/rank'
+  'diamond':
+    material: NAME_TAG
+    data: 0
+    slot: 13
+    priority: 1
+    update: false
+    hide_attributes: true
+    display_name: '&c[Lifestealer]&f Perks'
+    lore:
+      - ''
+      - '&7*&d&l PERKS:'
+      - ''
+      - ' &8➠ &7/anvil'
+      - ' &8➠ &7/cartographytable'
+      - ' &8➠ &7/enderchest'
+      - ' &8➠ &b/compass'
+      - ' &8➠ &b/grindstone'
+      - ' &8➠ &b/smithingtable'
+      - ''
+      - ' &8➦ &aPrice&8: &b10 Million $'
+      - ''
+      - '&aClick to buy now!'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 10000000
+          deny_commands:
+          - '[message] &4&lDarkVoid &8> &7You need &b10 Million $ &fto buy &c[Lifestealer]'
+    left_click_commands:
+    - '[console] eco take %player_name% 10000000'
+    - '[console] lp user %player_name% parent set lifestealer' 
+    - '[console] broadcast %player_name%&b Bought &c[Lifestealer], &e/rank'
+  'gold':
+    material: NAME_TAG
+    data: 0
+    slot: 15
+    priority: 1
+    update: false
+    hide_attributes: true
+    display_name: '&c&l[God of Lifesteal]&f Perks'
+    lore:
+      - ''
+      - '&7*&d&l PERKS:'
+      - ''
+      - ' &8➠ &7/anvil'
+      - ' &8➠ &7/cartographytable'
+      - ' &8➠ &7/enderchest'
+      - ' &8➠ &7/compass'
+      - ' &8➠ &7/grindstone'
+      - ' &8➠ &7/smithingtable'
+      - ' &8➠ &b/repair'
+      - ' &8➠ &b/hat'
+      - ' &8➠ &b/sethome &a(More , Multiple)'
+      - ' &8➠ &b/near'
+      - ' &8➠ &aCHAT &bCOLOR &dPERK'
+      - ''
+      - ' &8➦ &aPrice&8: &b20 Million $'
+      - ''
+      - '&aClick to buy now!'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 20000000
+          deny_commands:
+          - '[message] &4&lDarkVoid &8> &7You need &b20 Million $ &fto buy &c&l[God of Lifesteal]'
+    left_click_commands:
+    - '[console] eco take %player_name% 20000000'
+    - '[console] lp user %player_name% parent set slifesteal' 
+    - '[console] broadcast %player_name%&b Bought &c&l[God of Lifesteal], &e/rank'
