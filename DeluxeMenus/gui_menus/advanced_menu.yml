@@ -61,16 +61,16 @@ items:
     priority: 1
     update: false
     hide_attributes: true
-    display_name: '&f[&e&lVIP]&f Perks'
+    display_name: '&r &f Perks'
     lore:
       - ''
-      - '&7*&d&l PERKS:'
+      - '&d■&a ᴘᴇʀᴋs:'
       - ''
-      - ' &8➠ &b/anvil'
-      - ' &8➠ &b/cartographytable'
-      - ' &8➠ &b/enderchest'
+      - '&6☄ &b/anvil'
+      - '&6☄ &b/cartographytable'
+      - '&6☄ &b/enderchest'
       - ''
-      - ' &8➦ &aPrice&8: &b5 Million $'
+      - ' &8➦ &aPrice&8: &b5 Million &e⛃'
       - ''
       - '&aClick to buy now!'
     left_click_requirement:
@@ -79,11 +79,11 @@ items:
           type: has money
           amount: 5000000
           deny_commands:
-          - '[message] &4&lDarkVoid &8> &7You need &b5 Million $ &fto buy &a[VIP]'
+          - '[message] &4&lDarkVoid &8> &7You need &b5 Million $ &fto buy &r'
     left_click_commands:
     - '[console] eco take %player_name% 5000000'
     - '[console] lp user %player_name% parent set vip' 
-    - '[console] broadcast %player_name%&b Bought &a[VIP], &e/rank'
+    - '[console] broadcast %player_name%&b Bought &r, &e/rank'
   'diamond':
     material: NAME_TAG
     data: 0
@@ -91,19 +91,19 @@ items:
     priority: 1
     update: false
     hide_attributes: true
-    display_name: '&c[Lifestealer]&f Perks'
+    display_name: '&r &f Perks'
     lore:
       - ''
-      - '&7*&d&l PERKS:'
+      - '&d■&a ᴘᴇʀᴋs:'
       - ''
-      - ' &8➠ &7/anvil'
-      - ' &8➠ &7/cartographytable'
-      - ' &8➠ &7/enderchest'
-      - ' &8➠ &b/compass'
-      - ' &8➠ &b/grindstone'
-      - ' &8➠ &b/smithingtable'
+      - '&6☄ &7/anvil'
+      - '&6☄ &7/cartographytable'
+      - '&6☄ &7/enderchest'
+      - '&6☄ &b/compass'
+      - '&6☄ &b/grindstone'
+      - '&6☄ &b/smithingtable'
       - ''
-      - ' &8➦ &aPrice&8: &b10 Million $'
+      - ' &8➦ &aPrice&8: &b10 Million ⛃'
       - ''
       - '&aClick to buy now!'
     left_click_requirement:
@@ -112,11 +112,11 @@ items:
           type: has money
           amount: 10000000
           deny_commands:
-          - '[message] &4&lDarkVoid &8> &7You need &b10 Million $ &fto buy &c[Lifestealer]'
+          - '[message] &4&lDarkVoid &8> &7You need &b10 Million $ &fto buy &r'
     left_click_commands:
     - '[console] eco take %player_name% 10000000'
     - '[console] lp user %player_name% parent set lifestealer' 
-    - '[console] broadcast %player_name%&b Bought &c[Lifestealer], &e/rank'
+    - '[console] broadcast %player_name%&b Bought &r, &e/rank'
   'gold':
     material: NAME_TAG
     data: 0
@@ -124,24 +124,25 @@ items:
     priority: 1
     update: false
     hide_attributes: true
-    display_name: '&c&l[God of Lifesteal]&f Perks'
+    display_name: '&r&f Perks'
     lore:
       - ''
-      - '&7*&d&l PERKS:'
+      - '&d■&a ᴘᴇʀᴋs:'
       - ''
-      - ' &8➠ &7/anvil'
-      - ' &8➠ &7/cartographytable'
-      - ' &8➠ &7/enderchest'
-      - ' &8➠ &7/compass'
-      - ' &8➠ &7/grindstone'
-      - ' &8➠ &7/smithingtable'
-      - ' &8➠ &b/repair'
-      - ' &8➠ &b/hat'
-      - ' &8➠ &b/sethome &a(More , Multiple)'
-      - ' &8➠ &b/near'
-      - ' &8➠ &aCHAT &bCOLOR &dPERK'
+      - '&6☄ &7/anvil'
+      - '&6☄ &7/cartographytable'
+      - '&6☄ &7/enderchest'
+      - '&6☄ &7/compass'
+      - '&6☄ &7/grindstone'
+      - '&6☄ &7/smithingtable'
+      - '&6☄ &b/repair'
+      - '&6☄ &b/hat'
+      - '&6☄ &b/sethome &a(More , Multiple)'
+      - '&6☄ &b/near'
       - ''
-      - ' &8➦ &aPrice&8: &b20 Million $'
+      - '&c&l◈ &aCHAT &bCOLOR &dPERK'
+      - ''
+      - ' &8➦ &aPrice&8: &b20 Million ⛃'
       - ''
       - '&aClick to buy now!'
     left_click_requirement:
@@ -150,8 +151,8 @@ items:
           type: has money
           amount: 20000000
           deny_commands:
-          - '[message] &4&lDarkVoid &8> &7You need &b20 Million $ &fto buy &c&l[God of Lifesteal]'
+          - '[message] &4&lDarkVoid &8> &7You need &b20 Million $ &fto buy &r'
     left_click_commands:
     - '[console] eco take %player_name% 20000000'
     - '[console] lp user %player_name% parent set slifesteal' 
-    - '[console] broadcast %player_name%&b Bought &c&l[God of Lifesteal], &e/rank'
+    - '[console] broadcast %player_name%&b Bought &r, &e/rank'
