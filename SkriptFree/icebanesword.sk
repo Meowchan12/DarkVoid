@@ -1,0 +1,61 @@
+# ==========================
+#  ICEBANE SWORD - Skript
+#  Version: 1.1
+#  Minecraft: 1.21.1
+# ==========================
+
+command /icebanesword [<offlineplayer>]:
+    permission: icebane.sword
+    trigger:
+        if arg-1 is not set:
+            if sender is not player:
+                send "&cYou must specify a player when using this command from console!"
+                stop
+            set {_p} to player
+        else:
+            set {_p} to arg-1
+
+        set {_item} to netherite_sword
+        enchant {_item} with sharpness 7
+        enchant {_item} with unbreaking 20
+        enchant {_item} with fire aspect 3
+        enchant {_item} with looting 5
+        set name of {_item} to "&b&lIcebane Sword"
+        set lore of {_item} to "&7Right-click to unleash freezing magic!", "&cCooldown: 50 seconds"
+        give {_item} to {_p}
+        send "&aYou have received the &b&lIcebane Sword"
+        send "&aGave &b&lIcebane Sword to %{_p}%!" to sender
+
+# ========================================
+# Ability: Freeze + Wither + Poison around
+# ========================================
+on right click with netherite sword:
+    if name of player's tool is "&b&lIcebane Sword":
+        if "%world of player%" is "lobby1":
+            send "&cYou can't use this ability here!" to player
+            stop
+        # 🔒 Check permission before activating ability
+        if player has permission "icebane.skill":
+            if {icebane.cooldown.%player%} is not set:
+                set {icebane.cooldown.%player%} to true
+                send "&b[Ability] &b❄ &fYou unleashed &bIcebane's Power&f!" to player
+
+                # Loop through nearby entities
+                loop all living entities in radius 12 around player:
+                    if loop-entity is not player:
+                        set {_hp} to health of loop-entity
+                        set {_damage} to {_hp} * 0.5 # 70% true damage
+                        set health of loop-entity to {_hp} - {_damage}
+                        apply slowness 5 to loop-entity for 15 seconds
+                        apply poison 5 to loop-entity for 5 seconds
+                        apply wither 5 to loop-entity for 5 seconds
+                        push loop-entity away from player at speed 0.8
+                        send "&b❄ &fFroze &e%name of loop-entity% &fin place!" to player
+
+                wait 50 seconds
+                delete {icebane.cooldown.%player%}
+                send "&7[Ability] Skill cooldown finished." to player
+            else:
+                send "&cYour skill is still recharging!" to player
+        else:
+            send "&4[Ability Locked] &7You need &c&lWRAITH&f Ranks &7to use this sword!" to player
