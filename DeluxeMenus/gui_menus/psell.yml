@@ -1,0 +1,167 @@
+menu_title: '&6&lPoints Sell Shop'
+open_command:
+- pshop
+size: 27
+register_command: true
+items:
+  '0':
+    material: Diamond_block
+    slot: 0
+    display_name: '&fDiamond Blocks &b(x64)'
+    lore:
+    - ''
+    - "&8• &7Sell for: &f25 &aPoints"
+    - ''
+    - '&8Right click to sell'
+    - ''
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: has item # https://wiki.helpch.at/clips-plugins/deluxemenus/options-and-configurations/requirements#has-item
+          material: 'DIAMOND_BLOCK'
+          amount: 64
+          strict: true
+          deny_commands:
+          - '[message] &6Shop &8> &7You don''t have &c64 x Diamond block &fto sell.'
+    right_click_commands:
+    - '[console] points give %player_name% 25'
+    - '[console] minecraft:clear %player_name% diamond_block 64'
+    - '[message] &6Shop &8> &fYou sold &a64 x Diamond block &ffor &a25 Points&f.'
+  '1':
+    material: Emerald_block
+    slot: 1
+    display_name: '&fEmerald Blocks &b(x64)'
+    lore:
+    - ''
+    - "&8• &7Sell for: &f30 &aPoints"
+    - ''
+    - '&8Right click to sell'
+    - ''
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: has item # https://wiki.helpch.at/clips-plugins/deluxemenus/options-and-configurations/requirements#has-item
+          material: 'EMERALD_BLOCK'
+          amount: 64
+          strict: true
+          deny_commands:
+          - '[message] &6Shop &8> &7You don''t have &c64 x Emerald block &fto sell.'
+    right_click_commands:
+    - '[console] points give %player_name% 30'
+    - '[console] minecraft:clear %player_name% emerald_block 64'
+    - '[message] &6Shop &8> &fYou sold &a64 x Emerald block &ffor &a30 Points&f.'
+  '2':
+    material: Netherite_block
+    slot: 2
+    display_name: '&fNetherite Blocks &b(x64)'
+    lore:
+    - ''
+    - "&8• &7Sell for: &f90 &aPoints"
+    - ''
+    - '&8Right click to sell'
+    - ''
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: has item # https://wiki.helpch.at/clips-plugins/deluxemenus/options-and-configurations/requirements#has-item
+          material: 'NETHERITE_BLOCK'
+          amount: 64
+          strict: true
+          deny_commands:
+          - '[message] &6Shop &8> &7You don''t have &c64 x Netherite block &fto sell.'
+    right_click_commands:
+    - '[console] points give %player_name% 90'
+    - '[console] minecraft:clear %player_name% netherite_block 64'
+    - '[message] &6Shop &8> &fYou sold &a64 x Netherite block &ffor &a90 Points&f.'
+  '3':
+    material: Sugar_cane
+    slot: 3
+    display_name: '&fSugar Cane &b(x64)'
+    lore:
+    - ''
+    - "&8• &7Sell for: &f5 &aPoints"
+    - ''
+    - '&8Right click to sell'
+    - ''
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: has item # https://wiki.helpch.at/clips-plugins/deluxemenus/options-and-configurations/requirements#has-item
+          material: 'SUGAR_CANE'
+          amount: 64
+          strict: true
+          deny_commands:
+          - '[message] &6Shop &8> &7You don''t have &c64 x Sugar Cane &fto sell.'
+    right_click_commands:
+    - '[console] points give %player_name% 5'
+    - '[console] minecraft:clear %player_name% sugar_cane 64'
+    - '[message] &6Shop &8> &fYou sold &a64 x Sugar Cane &ffor &a5 Points&f.'
+  '4':
+    material: Nether_wart
+    slot: 4
+    display_name: '&fNether wart &b(x64)'
+    lore:
+    - ''
+    - "&8• &7Sell for: &f15 &aPoints"
+    - ''
+    - '&8Right click to sell'
+    - ''
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: has item # https://wiki.helpch.at/clips-plugins/deluxemenus/options-and-configurations/requirements#has-item
+          material: 'NETHER_WART'
+          amount: 64
+          strict: true
+          deny_commands:
+          - '[message] &6Shop &8> &7You don''t have &c64 x Nether wart &fto sell.'
+    right_click_commands:
+    - '[console] points give %player_name% 15'
+    - '[console] minecraft:clear %player_name% nether_wart 64'
+    - '[message] &6Shop &8> &fYou sold &a64 x Nether wart &ffor &a15 Points&f.'
+  '5':
+    material: Ominous_trial_key
+    slot: 5
+    display_name: '&fOminous Trial Key &b(x1)'
+    lore:
+    - ''
+    - "&8• &7Sell for: &f75 &aPoints"
+    - ''
+    - '&8Right click to sell'
+    - ''
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: has item # https://wiki.helpch.at/clips-plugins/deluxemenus/options-and-configurations/requirements#has-item
+          material: 'ominous_trial_key'
+          amount: 1
+          strict: true
+          deny_commands:
+          - '[message] &6Shop &8> &7You don''t have &c1 x Ominous Trial Key &fto sell.'
+    right_click_commands:
+    - '[console] points give %player_name% 75'
+    - '[console] minecraft:clear %player_name% ominous_trial_key 1'
+    - '[message] &6Shop &8> &fYou sold &a1 x Ominous Trial Key &ffor &a75 Points&f.'
+  '6':
+    material: Elytra
+    slot: 6
+    display_name: '&fElytra &b(x1)'
+    lore:
+    - ''
+    - "&8• &7Sell for: &f200 &aPoints"
+    - ''
+    - '&8Right click to sell'
+    - ''
+    right_click_requirement:
+      requirements:
+        anything_here:
+          type: has item # https://wiki.helpch.at/clips-plugins/deluxemenus/options-and-configurations/requirements#has-item
+          material: 'elytra'
+          amount: 1
+          strict: true
+          deny_commands:
+          - '[message] &6Shop &8> &7You don''t have &c1 x Elytra &fto sell.'
+    right_click_commands:
+    - '[console] points give %player_name% 200'
+    - '[console] minecraft:clear %player_name% elytra 1'
+    - '[message] &6Shop &8> &fYou sold &a1 x Elytra &ffor &a200 Points&f.'
