@@ -1,0 +1,149 @@
+menu_title: "&c&l❄ &d&lSeason 3 Christmas &fMenu"
+open_command:
+  - menu
+  - hubmenu
+size: 54
+update_interval: 1
+register_command: true
+
+items:
+  background:
+    material: blue_stained_glass_pane
+    slots: 
+    - 0-53
+    display_name: " "
+
+  header:
+    material: red_candle
+    slot: 4
+    display_name: "&f✨ &c&lWelcome, &a%player_name%!"
+    lore:
+      - "&7Balance: &e$%vault_eco_balance_formatted%"
+      - "&7Points: &b%playerpoints_points%"
+      - "&7Rank: &f%luckperms_prefix%"
+      - "&7Server Time: &f%server_time_HH:mm:ss%"
+
+  minigames:
+    material: diamond_sword
+    slot: 19
+    display_name: "&a🎮 &lMiniGames &c&lChristmas 2025"
+    lore:
+      - "&7Play limited-time winter events!"
+      - "&f- Parkour Events!"
+      - ""
+      - "&e▶ Click to view games"
+    left_click_commands:
+      - "[sound] block.note_block.pling"
+      - "[console] warp parkour %player_name%"
+
+  shop:
+    material: emerald
+    slot: 21
+    display_name: "&a🛍 &lShop"
+    lore:
+      - "&f- Currency: &aEconomy &fand &bPoints"
+      - ""
+      - "&e▶ Click to open shop"
+    left_click_commands:
+      - "[sound] block.amethyst_block.chime"
+      - "[message] &eComing New Points Sell Shop Guys!"
+
+  cosmetics:
+    material: MACE
+    slot: 23
+    display_name: "&b💎 &e&lExclusive Shop"
+    lore:
+      - ""
+      - "&b&lNOW AVALIABLE FOR EVERYONE!"
+      - ""
+      - "&e▶ Click to open"
+    left_click_commands:
+      - "[player] sshop"
+
+  event:
+    material: bell
+    slot: 25
+    display_name: "&6🎅 &5&lEvents"
+    lore:
+      - "&7Limited-time holiday content!"
+      - "&f- &c&lFREE ITEM IN /sshop"
+      - ""
+  profile:
+    material: player_head
+    slot: 28
+    display_name: "&f📜 &lYour Profile"
+    lore:
+      - "&7View your stats & info"
+      - "&f- Playtime: %statistic_time_played%"
+      - "&f- Kills: %statistic_player_kills%"
+      - "&f- Deaths: %statistic_deaths%"
+      - ""
+      - "&e▶ Click to open"
+
+  settings:
+    material: book
+    slot: 30
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: "&r&k&l||&d&l Season 3 Logs&k&l ||"
+    lore:
+      - ""
+      - "&e▶ &b&lVersion: &aS3b01"
+    left_click_commands:
+      - "[sound] ui.button.click"
+
+  shoprank:
+    material: emerald_block
+    slot: 32
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: "&a🛍 &c&lRank Shop"
+    lore:
+      - "&f- Currency: Economy & Points"
+      - ""
+      - "&e▶ Click to open shop"
+    left_click_commands:
+      - "[sound] block.amethyst_block.chime"
+      - "[player] rank"
+
+  vote:
+    material: paper
+    slot: 34
+    display_name: "&d💌 &d&lJoin Discord"
+    lore:
+      - "&e▶ &a&lJOIN NOW!"
+    left_click_commands:
+      - "[sound] entity.villager.yes"
+      - "[message] &e https://discord.gg/w7f3gGKkWv"
+
+  close:
+    material: barrier
+    slot: 49
+    display_name: "&c✖ Close"
+    left_click_commands:
+      - "[sound] ui.button.click"
+      - "[close]"
+  playtime:
+    material: chest
+    slot: 47
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: "&e&l$$$ &b&lPlay time Rewards"
+    lore:
+      - "&e▶ &aFeel Free to claim your rewards!"
+    left_click_commands:
+      - "[player] playtimes"
+  baltop:
+    material: gold_block
+    slot: 51
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: "&d&lPoints Sell Shop"
+    lore:
+      - "&e▶ &fClick this to view"
+    left_click_commands:
+      - "[player] pshop"
