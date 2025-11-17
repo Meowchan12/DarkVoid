@@ -1,0 +1,36 @@
+command /axh [<text>] [<text>]:
+    permission: axh.admin
+    trigger:
+        if arg-1 is "create":
+            set {_al} to "%random integer from 1 to 9%%random integer from 1 to 9%%random integer from 1 to 9%%random integer from 1 to 9%%random integer from 1 to 9%%random integer from 1 to 9%%random integer from 1 to 9%"
+            add {_al} to {al.list::*}
+            set {item.al.%{_al}%::*} to items in player's inventory
+            send "&e&lYou has set the code as number: &f&l[%{_al}%]"
+            stop
+        if arg-1 is "delete":
+            if arg-2 is set:
+                remove arg-2 from {al.list::*}
+                send "&e&lThe Code&f&l[%arg-2%]&c&l is Deleted!"
+                stop
+        if arg-1 is "list":
+            send "&e&l▁▂▃▅▆▇&b&l✲&f&lCode list&b&l✲&e&l▇▆▅▃▂▁"
+            Loop {al.list::*}:
+                set {_altop::%loop-index%} to {al.list::%loop-index%}
+            set {_sec} to 0
+            Loop {_altop::*}:
+                add 1 to {_sec}
+                send "&e&l%{_sec}%) &f&l[%loop-value%]"
+command /pxh [<text>] [<text>]:
+    trigger:
+        if arg-1 is "receive":
+            Loop {al.list::*}:
+                if arg-2 is not loop-value:
+                    send "&f&l[%arg-2%]&e&lThis code is used or not exist!!"
+                    send "&f&lPlease Tell Developer &b(Meowchan12) About this!"
+                    stop
+                else:
+                    add {item.al.%arg-2%::*} to the player's inventory
+                    execute console command "eco give %player% 200000"
+                    send "&f&l[%arg-2%]&e&lis claimed!!!"
+                    remove arg-2 from {al.list::*}
+                    stop
