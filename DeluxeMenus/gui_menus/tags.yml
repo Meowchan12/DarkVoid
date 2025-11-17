@@ -1,0 +1,83 @@
+menu_title: "&d&lMinecraft Tags"
+open_command:
+  - tags
+  - mctags
+size: 54
+update_interval: 2
+open_requirement:
+  requirements:
+    permission_required:
+      type: has permission
+      permission: tags.open
+      deny_commands:
+        - '[message] &dYou dont have &c&lEmperor&d Ranks to open!'
+register_command: true
+
+items:
+  background:
+    material: red_stained_glass_pane
+    slots: 
+    - 0-53
+    display_name: " "
+
+  header:
+    material: red_candle
+    slot: 47
+    display_name: "&f✨ &c&lWelcome, &a%player_name%!"
+    lore:
+      - "&7Balance: &e$%vault_eco_balance_formatted%"
+      - "&7Points: &b%playerpoints_points%"
+      - "&7Rank: &f%luckperms_prefix%"
+      - "&7Server Time: &f%server_time_HH:mm:ss%"
+    glowing: true
+
+  '0':
+    material: name_tag
+    slot: 11
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&f[&#7A61D9ɴ&#7055DEᴇ&#6549E3ᴠ&#5B3DE7ᴇ&#5031ECʀ&#4624F1ᴅ&#3B18F6ɪ&#310CFAᴇ&#2600FFs&f]'
+    lore:
+    - ''
+    - '&aLeft click to adopt tags'
+    left_click_commands:
+    - '[console] lp user %player_name% parent add neverdie'
+    - '[console] lp user %player_name% parent remove destroyer'
+    - '[console] lp user %player_name% parent remove godslayer'
+
+  '1':
+    material: name_tag
+    slot: 13
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&f[&#61D9C0ɢ&#55D0C8ᴏ&#49C8D0ᴅ&#3DBFD8s&#31B7E0ʟ&#24AEE7ᴀ&#18A5EFʏ&#0C9DF7ᴇ&#0094FFʀ&f]'
+    lore:
+    - ''
+    - '&aLeft click to adopt tags'
+    left_click_commands:
+    - '[console] lp user %player_name% parent add godslayer'
+    - '[console] lp user %player_name% parent remove destroyer'
+    - '[console] lp user %player_name% parent remove neverdie'
+  '2':
+    material: name_tag
+    slot: 15
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&f[&#D72D2Dᴅ&#D12730ᴇ&#CA2234s&#C41C37ᴛ&#BD173Aʀ&#B7113Dᴏ&#B00B41ʏ&#AA0644ᴇ&#A30047ʀ&f]'
+    lore:
+    - ''
+    - '&aLeft click to adopt tags'
+    left_click_commands:
+    - '[console] lp user %player_name% parent add destroyer'
+    - '[console] lp user %player_name% parent remove godslayer'
+    - '[console] lp user %player_name% parent remove neverdie'
+  close:
+    material: barrier
+    slot: 49
+    display_name: "&c✖ Close"
+    left_click_commands:
+      - "[sound] ui.button.click"
+      - "[close]"
