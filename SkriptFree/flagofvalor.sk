@@ -1,0 +1,61 @@
+# ===============================
+# FLAG OF VALOR - Custom Support Banner
+# Version: 1.2 (Fixed Activation & Cooldown)
+# ===============================
+
+command /flagofvalor [<offlineplayer>]:
+    permission: flag.give
+    trigger:
+        if arg-1 is not set:
+            if sender is not player:
+                send "&cYou must specify a player when using this command from console!"
+                stop
+            set {_p} to player
+        else:
+            set {_p} to arg-1
+
+        set {_item} to blaze_rod
+        set name of {_item} to "&6&lFlag of Valor"
+        set lore of {_item} to "&7A sacred relic that empowers allies.", "&eRight-click to activate (consumes on use).", "&cCooldown: 300s"
+        give {_item} to {_p}
+        send "&aGave &6&lFlag of Valor &ato %{_p}%!"
+
+# =====================================
+# FLAG ABILITY - Area Buff + Cooldown
+# =====================================
+on right click:
+    if name of player's tool is "&6&lFlag of Valor":
+        cancel event  # Ngăn hành động mặc định của Blaze Rod
+        if player has permission "flag.use":
+            if {flag_cooldown.%player%} is not set:
+                set {flag_cooldown.%player%} to now
+
+                send "&6⚑ &eYou raised the &6Flag of Valor&f! Allies are empowered!" to player
+
+                # Buff cho tất cả người chơi trong 15 block
+                loop all players in radius 15 around player:
+                    if loop-player is not player:
+                        apply strength 3 to loop-player for 120 seconds
+                        apply speed 3 to loop-player for 120 seconds
+                        apply fire resistance 1 to loop-player for 120 seconds
+                        send "&eYou are empowered by &6Flag of Valor!" to loop-player
+
+                # Buff cho chính người chơi
+                apply strength 2 to player for 120 seconds
+                apply speed 2 to player for 120 seconds
+                apply fire resistance 1 to player for 120 seconds
+
+                # Tiêu thụ item
+                remove 1 of player's tool from player
+
+                # Cooldown 300 giây
+                wait 300 seconds
+                delete {flag_cooldown.%player%}
+                send "&7[Ability] Flag of Valor is ready again!" to player
+            else:
+                set {_elapsed} to difference between now and {flag_cooldown.%player%}
+                set {_elapsed_seconds} to floor({_elapsed} parsed as timespan / 1 second)
+                set {_remaining} to 300 - {_elapsed_seconds}
+
+                if {_remaining} > 0:
+                    send "&c⚠ You must wait %{_remaining}%s before using &6Flag of Valor &cagain!" to player
