@@ -1,67 +1,40 @@
 #  A DeluxeMenus advanced configuration guide
 #=========================================================
 menu_title: '&6&lRanks'
+register_command: true
 open_command:
   - rank
   - rankup
   - rshop
 open_commands:
   - '[sound] BLOCK_COMPARATOR_CLICK'
-size: 27
+  - '[message] &bOpening.... &cEnjoy!'
+size: 54
 # as always, only cool people can open this menu :)
 items:
-  'fill1':
-    material: BLUE_STAINED_GLASS_PANE
-    data: 0
+  'new1':
+    material: YELLOW_STAINED_GLASS_PANE
     slots:
-      - 0
-      - 8
-      - 18
-      - 26
+      - 0-53
     priority: 1
     update: false
-    hide_attributes: true
     display_name: ' '
-  'fill2':
-    material: LIGHT_BLUE_STAINED_GLASS_PANE
-    data: 0
+  'new2':
+    material: ORANGE_STAINED_GLASS_PANE
     slots:
-      - 1
-      - 7
-      - 9
-      - 17
-      - 19
-      - 25
+      - 18-35
     priority: 1
     update: false
-    hide_attributes: true
-    display_name: ' '
-  'fill3':
-    material: GRAY_STAINED_GLASS_PANE
-    data: 0
-    slots:
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - 20
-      - 21
-      - 22
-      - 23
-      - 24
-    priority: 1
-    update: false
-    hide_attributes: true
     display_name: ' '
   'emerald':
     material: NAME_TAG
-    data: 0
     slot: 11
     priority: 1
     update: false
-    hide_attributes: true
-    display_name: '&r &f Perks'
+    enchantments:
+      - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&#555B5DO&#505557U&#4A5052T&#454A4CC&#404446A&#3A3F41S&#35393BT&f Perks'
     lore:
       - ''
       - '&d■&a ᴘᴇʀᴋs:'
@@ -70,28 +43,37 @@ items:
       - '&6☄ &b/cartographytable'
       - '&6☄ &b/enderchest'
       - ''
-      - ' &8➦ &aPrice&8: &b5 Million &e⛃'
+      - ' &8➦ &aPrice&8: &b5 Million &e⛃ + &b200 Points'
       - ''
       - '&aClick to buy now!'
     left_click_requirement:
       requirements:
-        anything_here:
+        has_money:
           type: has money
           amount: 5000000
           deny_commands:
-          - '[message] &4&lDarkVoid &8> &7You need &b5 Million $ &fto buy &r'
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b5 Million $ &fto buy this rank!'
+        has_points:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '200'
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b200 Points &fto buy this rank!'
     left_click_commands:
-    - '[console] eco take %player_name% 5000000'
-    - '[console] lp user %player_name% parent set vip' 
-    - '[console] broadcast %player_name%&b Bought &r, &e/rank'
+      - '[console] eco take %player_name% 5000000'
+      - '[console] points take %player_name% 200'
+      - '[console] lp user %player_name% parent set outcast'
+      - '[console] broadcast %player_name% &bjust bought &#555B5DO&#505557U&#4A5052T&#454A4CC&#404446A&#3A3F41S&#35393BT&f!'
+
   'diamond':
     material: NAME_TAG
-    data: 0
     slot: 13
     priority: 1
     update: false
-    hide_attributes: true
-    display_name: '&r &f Perks'
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&#556368S&#536168C&#525F67A&#505D67V&#4F5B67E&#4D5866N&#4B5666G&#4A5465E&#485265R&f Perks'
     lore:
       - ''
       - '&d■&a ᴘᴇʀᴋs:'
@@ -103,28 +85,41 @@ items:
       - '&6☄ &b/grindstone'
       - '&6☄ &b/smithingtable'
       - ''
-      - ' &8➦ &aPrice&8: &b10 Million ⛃'
+      - ' &8➦ &aPrice&8: &b18 Million &e⛃ + &b700 Points'
       - ''
       - '&aClick to buy now!'
     left_click_requirement:
       requirements:
-        anything_here:
+        has_money:
           type: has money
-          amount: 10000000
+          amount: 18000000
           deny_commands:
-          - '[message] &4&lDarkVoid &8> &7You need &b10 Million $ &fto buy &r'
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b18 Million $ &fto buy this rank!'
+        has_points:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '700'
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b700 Points &fto buy this rank!'
+        must_have_outcast:
+          type: has permission
+          permission: group.outcast
+          deny_commands:
+          - "[message] &c❌ You must have &#555B5DO&#505557U&#4A5052T&#454A4CC&#404446A&#3A3F41S&#35393BT &crank before buying this rank!"
     left_click_commands:
-    - '[console] eco take %player_name% 10000000'
-    - '[console] lp user %player_name% parent set lifestealer' 
-    - '[console] broadcast %player_name%&b Bought &r, &e/rank'
+    - '[console] eco take %player_name% 18000000'
+    - '[console] p take %player_name% 700'
+    - '[console] lp user %player_name% parent set scavenger' 
+    - '[console] broadcast %player_name%&b Bought &#556368S&#536168C&#525F67A&#505D67V&#4F5B67E&#4D5866N&#4B5666G&#4A5465E&#485265R&f, &e/rank'
   'gold':
     material: NAME_TAG
-    data: 0
     slot: 15
     priority: 1
     update: false
-    hide_attributes: true
-    display_name: '&r&f Perks'
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&#DDEA76M&#D8DF69E&#D4D45CR&#CFC84FC&#CABD42E&#C5B234N&#C1A727A&#BC9B1AR&#B7900DY&f Perks'
     lore:
       - ''
       - '&d■&a ᴘᴇʀᴋs:'
@@ -140,19 +135,299 @@ items:
       - '&6☄ &b/sethome &a(More , Multiple)'
       - '&6☄ &b/near'
       - ''
-      - '&c&l◈ &aCHAT &bCOLOR &dPERK'
       - ''
-      - ' &8➦ &aPrice&8: &b20 Million ⛃'
+      - ' &8➦ &aPrice&8: &b25 Million &e⛃ + &b1500 Points'
       - ''
       - '&aClick to buy now!'
     left_click_requirement:
       requirements:
+        has_money:
+          type: has money
+          amount: 25000000
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b25M $ &fto buy this rank!'
+        has_points:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '1500'
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b1500 Points &fto buy this rank!'
+        must_have_outcast:
+          type: has permission
+          permission: group.scavenger
+          deny_commands:
+          - "[message] &c❌ You must have &#556368S&#536168C&#525F67A&#505D67V&#4F5B67E&#4D5866N&#4B5666G&#4A5465E&#485265R &crank before buying this rank!"
+    left_click_commands:
+    - '[console] eco take %player_name% 25000000'
+    - '[console] p take %player_name% 1500'
+    - '[console] lp user %player_name% parent set mercenary' 
+    - '[console] broadcast %player_name%&b Bought &#DDEA76M&#D8DF69E&#D4D45CR&#CFC84FC&#CABD42E&#C5B234N&#C1A727A&#BC9B1AR&#B7900DY&f, &e/rank'
+  'super':
+    material: NAME_TAG
+    slot: 38
+    priority: 1
+    update: false
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&#D12E4BW&#D52D55R&#DA2C5FA&#DE2B69I&#E32A73T&#E7297DH&f Perks'
+    lore:
+      - ''
+      - '&d■&a ᴘᴇʀᴋs:'
+      - ''
+      - '&6☄ &7/anvil'
+      - '&6☄ &7/cartographytable'
+      - '&6☄ &7/enderchest'
+      - '&6☄ &7/compass'
+      - '&6☄ &7/grindstone'
+      - '&6☄ &7/smithingtable'
+      - '&6☄ &7/repair'
+      - '&6☄ &7/hat'
+      - '&6☄ &7/sethome &a(More , &bUnlimited)'
+      - '&6☄ &7/near'
+      - '&6☄ &b/me'
+      - ''
+      - '&7&l◈ &aCHAT &bCOLOR &dPERK'
+      - '&6&l◈ &a&lKeepXP&f after death:&b True'
+      - ''
+      - ' &8➦ &aPrice&8: &b60 Million &e⛃ + &b3200 Points'
+      - ''
+      - '&aClick to buy now!'
+    left_click_requirement:
+      requirements:
+        has_money:
+          type: has money
+          amount: 60000000
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b60M $ &fto buy this rank!'
+        has_points:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '3200'
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b3200 Points &fto buy this rank!'
+        must_have_outcast:
+          type: has permission
+          permission: group.mercenary
+          deny_commands:
+          - "[message] &c❌ You must have &#DDEA76M&#D8DF69E&#D4D45CR&#CFC84FC&#CABD42E&#C5B234N&#C1A727A&#BC9B1AR&#B7900DY &crank before buying this rank!"
+    left_click_commands:
+    - '[console] eco take %player_name% 60000000'
+    - '[console] p take %player_name% 3200'
+    - '[console] lp user %player_name% parent set wraith' 
+    - '[console] broadcast %player_name%&b Bought &#D12E4BW&#D52D55R&#DA2C5FA&#DE2B69I&#E32A73T&#E7297DH&f, &e/rank'
+  'elite':
+    material: NAME_TAG
+    slot: 40
+    priority: 1
+    update: false
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&#EA1B3FO&#ED1736V&#F0132DE&#F30F24R&#F60C1BL&#F90812O&#FC0409R&#FF0000D&f Perks'
+    lore:
+      - ''
+      - '&d■&a ᴘᴇʀᴋs:'
+      - ''
+      - '&6☄ &7/anvil'
+      - '&6☄ &7/cartographytable'
+      - '&6☄ &7/enderchest'
+      - '&6☄ &7/compass'
+      - '&6☄ &7/grindstone'
+      - '&6☄ &7/smithingtable'
+      - '&6☄ &7/repair'
+      - '&6☄ &7/hat'
+      - '&6☄ &7/sethome &a(More , &bUnlimited)'
+      - '&6☄ &7/near'
+      - '&6☄ &7/me'
+      - '&6☄ &b/feed'
+      - '&6☄ &b/sign'
+      - ''
+      - '&7&l◈ &aCHAT &bCOLOR &dPERK'
+      - '&6&l◈ &a&lKeepXP&f after death:&b True'
+      - ''
+      - ' &8➦ &aPrice&8: &b95 Million &e⛃ + &b5000 Points'
+      - ''
+      - '&aClick to buy now!'
+    left_click_requirement:
+      requirements:
+        has_money:
+          type: has money
+          amount: 95000000
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b89M $ &fto buy this rank!'
+        has_points:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '5000'
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b5000 Points &fto buy this rank!'
+        must_have_outcast:
+          type: has permission
+          permission: group.wraith
+          deny_commands:
+          - "[message] &c❌ You must have &#D12E4BW&#D52D55R&#DA2C5FA&#DE2B69I&#E32A73T&#E7297DH &crank before buying this rank!"
+    left_click_commands:
+    - '[console] eco take %player_name% 95000000'
+    - '[console] p take %player_name% 5000'
+    - '[console] lp user %player_name% parent set overlord' 
+    - '[console] broadcast %player_name%&b Bought &#EA1B3FO&#ED1736V&#F0132DE&#F30F24R&#F60C1BL&#F90812O&#FC0409R&#FF0000D&f, &e/rank'
+  'everything':
+    material: NAME_TAG
+    slot: 42
+    priority: 1
+    update: false
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&#C21BEAE&#CC17E4M&#D612DDP&#E10ED7E&#EB09D0R&#F505CAO&#FF00C3R&f Perks'
+    lore:
+      - ''
+      - '&d■&a ᴘᴇʀᴋs:'
+      - ''
+      - '&6☄ &7/anvil'
+      - '&6☄ &7/cartographytable'
+      - '&6☄ &7/enderchest'
+      - '&6☄ &7/compass'
+      - '&6☄ &7/grindstone'
+      - '&6☄ &7/smithingtable'
+      - '&6☄ &7/repair'
+      - '&6☄ &7/hat'
+      - '&6☄ &7/sethome &a(More , &bUnlimited)'
+      - '&6☄ &7/near'
+      - '&6☄ &7/me'
+      - '&6☄ &7/feed'
+      - '&6☄ &7/sign'
+      - '&6☄ &b/heal'
+      - '&6☄ &c&l/pv'
+      - ''
+      - '&7&l◈ &aCHAT &bCOLOR &dPERK'
+      - '&6&l◈ &a&lKeepXP after death:&b True'
+      - ''
+      - ' &8➦ &aPrice&8: &b250 Million &e⛃ + &b10000 Points'
+      - ''
+      - '&aClick to buy now!'
+    left_click_requirement:
+      requirements:
+        has_money:
+          type: has money
+          amount: 250000000
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b500M $ &fto buy this rank!'
+        has_points:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '10000'
+          deny_commands:
+          - '[message] &c❌ &4&lDarkVoid &8> &7You need &b50k Points &fto buy this rank!'
+        must_have_outcast:
+          type: has permission
+          permission: group.overlord
+          deny_commands:
+          - "[message] &c❌ You must have &#EA1B3FO&#ED1736V&#F0132DE&#F30F24R&#F60C1BL&#F90812O&#FC0409R&#FF0000D &crank before buying this rank!"
+    left_click_commands:
+    - '[console] eco take %player_name% 250000000'
+    - '[console] p take %player_name% 10000'
+    - '[console] lp user %player_name% parent set void-emperor' 
+    - '[console] broadcast %player_name%&b Bought &#C21BEAE&#CC17E4M&#D612DDP&#E10ED7E&#EB09D0R&#F505CAO&#FF00C3R&f, &e/rank'
+  'info':
+    material: player_head
+    slot: 49
+    display_name: '&aPlayer Information'
+    lore:
+    - '&bID: %player_name%'
+    - '&aYour Balance: %vault_eco_balance_formatted%'
+    - '&aYour Points: %playerpoints_points%'
+    left_click_commands:
+    - '[message] &aThanks for reading.'
+  '2':
+    material: Gold_ingot
+    slot: 0
+    display_name: '&a&l50k Money &f->>>&e&l 25 Points'
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
         anything_here:
           type: has money
-          amount: 20000000
-          deny_commands:
-          - '[message] &4&lDarkVoid &8> &7You need &b20 Million $ &fto buy &r'
+          amount: 50000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$50k&7 for &ethis.'
     left_click_commands:
-    - '[console] eco take %player_name% 20000000'
-    - '[console] lp user %player_name% parent set slifesteal' 
-    - '[console] broadcast %player_name%&b Bought &r, &e/rank'
+    - '[console] eco take %player_name% 50000'
+    - '[console] p give %player_name% 25'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
+  '3':
+    material: Gold_ingot
+    slot: 2
+    display_name: '&a&l95k Money &f->>>&e&l 50 Points&c (5% OFF)'
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 95000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$95k&7 for &ethis.'
+    left_click_commands:
+    - '[console] eco take %player_name% 95000'
+    - '[console] p give %player_name% 50'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
+  '4':
+    material: Gold_ingot
+    slot: 4
+    display_name: '&a&l180k Money &f->>>&e&l 100 Points&c (10% OFF)'
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 180000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$180k&7 for &ethis.'
+    left_click_commands:
+    - '[console] eco take %player_name% 180000'
+    - '[console] p give %player_name% 100'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
+  '5':
+    material: Gold_ingot
+    slot: 6
+    display_name: '&a&l320k Money &f->>>&e&l 200 Points&c (20% OFF)'
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 320000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$320k&7 for &ethis.'
+    left_click_commands:
+    - '[console] eco take %player_name% 320000'
+    - '[console] p give %player_name% 200'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
+  '6':
+    material: Gold_ingot
+    slot: 8
+    display_name: '&a&l750k Money &f->>>&e&l 500 Points&c (25% OFF)'
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 750000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$750k&7 for &ethis.'
+    left_click_commands:
+    - '[console] eco take %player_name% 750000'
+    - '[console] p give %player_name% 500'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
