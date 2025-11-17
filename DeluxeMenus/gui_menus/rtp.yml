@@ -1,0 +1,59 @@
+menu_title: "&c&l❄ &c&lRTP Menus"
+open_command:
+  - rtp
+  - rtpmenu
+size: 54
+update_interval: 2
+register_command: true
+
+items:
+  background:
+    material: red_stained_glass_pane
+    slots: 
+    - 0-53
+    display_name: " "
+
+  header:
+    material: red_candle
+    slot: 47
+    display_name: "&f✨ &c&lWelcome, &a%player_name%!"
+    lore:
+      - "&7Balance: &e$%vault_eco_balance_formatted%"
+      - "&7Points: &b%playerpoints_points%"
+      - "&7Rank: &f%luckperms_prefix%"
+      - "&7Server Time: &f%server_time_HH:mm:ss%"
+    glowing: true
+
+  '0':
+    material: grass_block
+    slot: 19
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&a&lOverworld'
+    lore:
+    - ''
+    - '&aLeft click to teleport'
+    left_click_commands:
+    - '[player] betterrtp world world'
+
+  '1':
+    material: dirt
+    slot: 21
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&a&lOverworld &f[&bWinter&f]'
+    lore:
+    - '&c&lNEW: More Resources , New Terrain!'
+    - ''
+    - '&aLeft click to teleport'
+    left_click_commands:
+    - '[player] betterrtp world world2'
+  close:
+    material: barrier
+    slot: 49
+    display_name: "&c✖ Close"
+    left_click_commands:
+      - "[sound] ui.button.click"
+      - "[close]"
