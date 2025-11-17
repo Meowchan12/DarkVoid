@@ -1,0 +1,47 @@
+# ===============================
+# COOLDOWNER - Cooldown Reset Staff
+# Version: 1.2 (Reset Flag, Outcast, Icebane)
+# ===============================
+
+command /cooldowner [<offlineplayer>]:
+    permission: cooldowner.give
+    trigger:
+        if arg-1 is not set:
+            if sender is not player:
+                send "&cYou must specify a player when using this command from console!"
+                stop
+            set {_p} to player
+        else:
+            set {_p} to arg-1
+
+        set {_item} to blaze_rod
+        set name of {_item} to "&b&lCooldowner"
+        set lore of {_item} to "&7A mystic staff that resets ability cooldowns.", "&eRight-click to clear your cooldowns.", "&cCooldown: 30s"
+        give {_item} to {_p}
+        send "&aGave &b&lCooldowner &ato %{_p}%!"
+
+# =====================================
+# COOLDOWNER ABILITY - Reset Cooldowns
+# =====================================
+on right click:
+    if name of player's tool is "&b&lCooldowner":
+        if player has permission "cooldowner.use":
+            if {cooldowner_cooldown.%player%} is not set:
+                set {cooldowner_cooldown.%player%} to now
+
+                send "&b✨ You wave the &lCooldowner&b! All your ability cooldowns are reset!" to player
+
+                delete {flag_cooldown.%player%}
+                delete {cd.%player%}
+                delete {icebane.cooldown.%player%}
+
+                wait 30 seconds
+                delete {cooldowner_cooldown.%player%}
+                send "&7[Ability] &bCooldowner &fis ready again!" to player
+            else:
+                set {_elapsed} to difference between now and {cooldowner_cooldown.%player%}
+                set {_elapsed_seconds} to floor({_elapsed} parsed as timespan / 1 second)
+                set {_remaining} to 30 - {_elapsed_seconds}
+
+                if {_remaining} > 0:
+                    send "&c⚠ You must wait %{_remaining}%s before using &bCooldowner &cagain!" to player
