@@ -1,0 +1,400 @@
+menu_title: "&c&l❄ &6&lSuper Shop"
+open_command:
+  - supershop
+  - sshop
+size: 54
+update_interval: 2
+register_command: true
+
+items:
+  background:
+    material: blue_stained_glass_pane
+    slots: 
+    - 0-53
+    display_name: " "
+
+  header:
+    material: red_candle
+    slot: 47
+    display_name: "&f✨ &c&lWelcome, &a%player_name%!"
+    lore:
+      - "&7Balance: &e$%vault_eco_balance_formatted%"
+      - "&7Points: &b%playerpoints_points%"
+      - "&7Rank: &f%luckperms_prefix%"
+      - "&7Server Time: &f%server_time_HH:mm:ss%"
+    glowing: true
+
+  '0':
+    material: Netherite_sword
+    slot: 19
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&7&lOutCast Sword &b&l↻'
+    lore:
+    - '&d&lTier&f: [&6&lS+&f]'
+    - '&f&c Enchantments:'
+    - '&f| &aSharpness 5'
+    - '&f| &aLooting 3'
+    - '&f| &aUnbreaking 15'
+    - '&f| &aFire Aspect 2'
+    - ''
+    - '&b&l✦&c&l ABILITY: &fKnock entities'
+    - '&fand Buff yourself effects &d(Changed)'
+    - '&c&lCountdown:&f 45 seconds'
+    - '&4&lWarning: DO NOT ENCHANT MORE , IT EXCLUSIVE SWORDS'
+    - ''
+    - "&8• &aBuy for: &e&l4000 Points"
+    - ''
+    - '&aLeft click to buy'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '4000'
+          deny_commands:
+          - '[message] &6Shop &8> &7You need &c4000 Points &fto buy &cthis.'
+    left_click_commands:
+    - '[console] p take %player_name% 4000'
+    - '[console] outcastsword %player_name%'
+    - '[message] &aThanks for buying.'
+
+  '1':
+    material: white_shulker_box
+    slot: 21
+    display_name: "&6&lSuper Box"
+    lore:
+    - '&a&lContains&f:&e Super Armor , Axe , Pickaxe , Shovel , &fHoe (Bonus)'
+    - ''
+    - "&8• &aBuy for: &e&l8000 Points"
+    - ''
+    - '&aLeft click to buy'
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '8000'
+          deny_commands:
+          - '[message] &6Shop &8> &7You need &c8000 Points &fto buy &cthis.'
+    left_click_commands:
+    - '[console] p take %player_name% 8000'
+    - '[console] serveritem give superbox 1 %player_name%'
+    - '[message] &aThanks for buying.'
+  '2':
+    material: Netherite_sword
+    slot: 28
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&b&lIcebane Sword &e&l↓'
+    lore:
+    - '&d&lTier&f: [&e&lSS Exclusive&f]'
+    - '&f&c Enchantments:'
+    - '&f| &aSharpness 7'
+    - '&f| &aLooting 4'
+    - '&f| &aUnbreaking 20'
+    - '&f| &aFire Aspect 3'
+    - ''
+    - '&b&l✦&c&l ABILITY: &fFrozen and Slow &d(Nerfed)'
+    - '&fEntities and &c-50% Health&f on Entities'
+    - '&c&lCountdown:&f 50 seconds'
+    - '&4&lWarning: DO NOT ENCHANT MORE , IT EXCLUSIVE SWORDS'
+    - ''
+    - "&8• &aBuy for: &e&l7000 Points"
+    - ''
+    - '&aLeft click to buy'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '7000'
+          deny_commands:
+          - '[message] &6Shop &8> &7You need &c7000 Points &fto buy &cthis.'
+    left_click_commands:
+    - '[console] p take %player_name% 7000'
+    - '[console] icebanesword %player_name%'
+    - '[message] &aThanks for buying.'
+  '4':
+    material: blaze_rod
+    slot: 23
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: "&b&lCooldowner"
+    lore:
+    - '&eRight click to Reset all ability cooldown &f(Outcast , Icebane)'
+    - '&cCooldown: 30sec'
+    - ''
+    - "&8• &aBuy for: &e&l5000 Points"
+    - ''
+    - '&aLeft click to buy'
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '5000'
+          deny_commands:
+          - '[message] &6Shop &8> &7You need &c5000 Points &fto buy &cthis.'
+    left_click_commands:
+    - '[console] p take %player_name% 5000'
+    - '[console] cooldowner %player_name%'
+    - '[message] &aThanks for buying.'
+  '5':
+    material: Netherite_sword
+    slot: 37
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: '&5⚔ Abyssal Sword &5&l[SSS+ Ultimate] &c&l↑'
+    lore:
+    - '&d&lTier&f: [&d&lSSS+ Ultimate&f]'
+    - '&f&c Enchantments:'
+    - '&f| &aSharpness 15'
+    - '&f| &aLooting 7'
+    - '&f| &aUnbreaking 20'
+    - '&f| &aFire Aspect 3'
+    - ''
+    - '&b&l✦&c&l ABILITY: &c-90%&f Health and Knockback Them Near You!'
+    - '&b&l✦&c&l ABILITY: &cMake them weakness and poison &d&l(Buffed)'
+    - '&b&l✦&c&l ABILITY: &fRemove All Your Bad Effects'
+    - '&fand Get Your Effects Buff'
+    - '&c&lCountdown:&f 120 seconds'
+    - '&4&lWarning: DO NOT ENCHANT MORE , IT EXCLUSIVE SWORDS'
+    - ''
+    - "&8• &aBuy for: &e&l70000 Points"
+    - ''
+    - '&aLeft click to buy'
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '70000'
+          deny_commands:
+          - '[message] &6Shop &8> &7You need &c70000 Points &fto buy &cthis.'
+    left_click_commands:
+    - '[console] p take %player_name% 70000'
+    - '[console] abyssalsword %player_name%'
+    - '[message] &aThanks for buying.'
+  '6':
+    material: blaze_rod
+    slot: 32
+    enchantments:
+    - DURABILITY;1
+    item_flags: [HIDE_ENCHANTS]
+    display_name: "&c&lFlag Of Valor"
+    lore:
+    - '&d&lTier&f: [&eSS&f]'
+    - '&eRight click to Buff Every Player in 15 Block Ranges.'
+    - '&cCooldown: 300sec'
+    - ''
+    - "&8• &aBuy for: &e&l15000 Points"
+    - ''
+    - '&aLeft click to buy'
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '15000'
+          deny_commands:
+          - '[message] &6Shop &8> &7You need &c15000 Points &fto buy &cthis.'
+    left_click_commands:
+    - '[console] p take %player_name% 15000'
+    - '[console] flagofvalor %player_name%'
+    - '[message] &aThanks for buying.'
+  '7':
+    material: red_shulker_box
+    slot: 30
+    display_name: "&c&lDangerous Box"
+    lore:
+    - '&d&lTier&f: [&c&lSSS&f]'
+    - '&a&lContains&f:&c&l Dangerous Bow , &fArrow'
+    - ''
+    - "&8• &aBuy for: &e&l10000 Points"
+    - ''
+    - '&aLeft click to buy'
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '10000'
+          deny_commands:
+          - '[message] &6Shop &8> &7You need &c10000 Points &fto buy &cthis.'
+    left_click_commands:
+    - '[console] p take %player_name% 10000'
+    - '[console] serveritem give dangerous 1 %player_name%'
+    - '[message] &aThanks for buying.'
+  '8':
+    material: orange_shulker_box
+    slot: 39
+    display_name: "&b&lIcebane Box"
+    lore:
+    - '&d&lTier&f: [&c&lSSS&f]'
+    - '&a&lContains&f:&b&l Icebane Armor , Mace , Firework'
+    - '&c&lNO THORNS INSIDE'
+    - ''
+    - "&8• &aBuy for: &e&l70000 Points"
+    - ''
+    - '&aLeft click to buy'
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: '>='
+          input: '%playerpoints_points%'
+          output: '70000'
+          deny_commands:
+          - '[message] &6Shop &8> &7You need &c70000 Points &fto buy &cthis.'
+    left_click_commands:
+    - '[console] p take %player_name% 70000'
+    - '[console] serveritem give icebanebox 1 %player_name%'
+    - '[message] &aThanks for buying.'
+  close:
+    material: barrier
+    slot: 49
+    display_name: "&c✖ Close"
+    left_click_commands:
+      - "[sound] ui.button.click"
+      - "[close]"
+  'p1':
+    material: Gold_ingot
+    slot: 0
+    display_name: '&a&l50k Money &f->>>&e&l 25 Points'
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 50000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$50k&7 for &ethis.'
+    left_click_commands:
+    - '[console] eco take %player_name% 50000'
+    - '[console] p give %player_name% 25'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
+  'p2':
+    material: Gold_ingot
+    slot: 2
+    display_name: '&a&l95k Money &f->>>&e&l 50 Points&c (5% OFF)'
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 95000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$95k&7 for &ethis.'
+    left_click_commands:
+    - '[console] eco take %player_name% 95000'
+    - '[console] p give %player_name% 50'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
+  'p3':
+    material: Gold_ingot
+    slot: 4
+    display_name: '&a&l180k Money &f->>>&e&l 100 Points&c (10% OFF)'
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 180000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$180k&7 for &ethis.'
+    left_click_commands:
+    - '[console] eco take %player_name% 180000'
+    - '[console] p give %player_name% 100'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
+  'p4':
+    material: Gold_ingot
+    slot: 6
+    display_name: '&a&l320k Money &f->>>&e&l 200 Points&c (20% OFF)'
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 320000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$320k&7 for &ethis.'
+    left_click_commands:
+    - '[console] eco take %player_name% 320000'
+    - '[console] p give %player_name% 200'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
+  'p5':
+    material: Gold_ingot
+    slot: 8
+    display_name: '&a&l750k Money &f->>>&e&l 500 Points&c (25% OFF)'
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    lore:
+    - ''
+    left_click_requirement:
+      requirements:
+        anything_here:
+          type: has money
+          amount: 750000
+      deny_commands:
+      - '[message] &6Shop &8> &7You need &c$750k&7 for &ethis.'
+    left_click_commands:
+    - '[console] eco take %player_name% 750000'
+    - '[console] p give %player_name% 500'
+    - '[message] &aThanks For buying. &eYour New Points Balance: &b%playerpoints_points%'
+  '9':
+    material: Netherite_sword
+    slot: 43
+    enchantments:
+      - DURABILITY;1 # or any other enchantmet / level
+    item_flags: [HIDE_ENCHANTS]
+    priority: 2
+    display_name: "&f[&c&lFREE&f] &b&lChristmas Sword"
+    lore:
+    - '&d&lTier&f: &f[&aA&f]'
+    - '&f| &aSharpness 4'
+    - '&f| &aLooting 5'
+    - '&f| &aUnbreaking 20'
+    - '&f| &aFire Aspect 2'
+    - ''
+    - "&8• &aBuy for: &d&lFREE"
+    - ''
+    - '&aLeft click to buy'
+    left_click_commands:
+      - '[givepermission] meta.freechristmas'
+      - '[message] &bThanks for buying. Enjoy Your Games!'
+      - '[console] serveritem give freechristmas 1 %player_name%'
+      - '[close]'
+  'lockedfree':
+    material: barrier
+    slot: 43
+    priority: 1
+    display_name: "&c&lYou claimed this free Rewards!"
+    view_requirement:
+      requirements:
+        claimed:
+          type: has permission
+          permission: 'meta.freechristmas' 
+    lore:
+      - '&d&lTier&f: &f[&aA&f]'
+      - '&f| &aSharpness 4'
+      - '&f| &aLooting 5'
+      - '&f| &aUnbreaking 20'
+      - '&f| &aFire Aspect 2'
+      - ''
+      - "&8• &aBuy for: &d&lFREE"
