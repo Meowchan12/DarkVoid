@@ -1,0 +1,66 @@
+# ==========================
+#  OUTCAST SUPER SWORD - Skript
+#  Version: 1.2 (with disabled worlds)
+#  Minecraft: 1.21.1
+# ==========================
+
+on right click with netherite sword:
+    if name of player's tool is "&7&lOutcast Sword":
+        if "%world of player%" is "lobby1":
+            send "&cYou can't use this ability here!" to player
+            stop
+
+        if player has permission "outcast.skill":
+            if {cd.%player%} is not set:
+                send "&b[Ability] &c&lYOU TRIGGERED ABILITY SWORD!" to player
+
+                # Buffs
+                apply speed 2 to player for 50 seconds
+                apply increase damage 1 to player for 50 seconds
+                apply damage resistance 2 to player for 50 seconds
+
+                # Area damage
+                set {_range} to 12
+                set {_damage} to 10
+                set {_kb} to 3
+
+                loop all living entities in radius {_range} around player:
+                    if loop-entity is not player:
+                        push loop-entity upwards with force 1
+                        push loop-entity away from player at speed {_kb}
+                        damage loop-entity by {_damage} hearts
+                        send "&c⚔ &fYou slashed &e%name of loop-entity% &fwith divine power!" to player
+
+                set {cd.%player%} to true
+                wait 45 seconds
+                delete {cd.%player%}
+                send "&7[Ability] Skill cooldown finished." to player
+            else:
+                send "&cYour skill is still recharging!" to player
+        else:
+            send "&4[Ability Locked] &7You need permission &b'outcast.skill' &7to use this sword!" to player
+
+# ==========================
+#  GIVE COMMAND
+# ==========================
+command /outcastsword [<offlineplayer>]:
+    permission: outcast.sword
+    trigger:
+        if arg-1 is not set:
+            if sender is not player:
+                send "&cYou must specify a player when using this command from console!"
+                stop
+            set {_p} to player
+        else:
+            set {_p} to arg-1
+
+        set {_item} to netherite_sword
+        enchant {_item} with sharpness 5
+        enchant {_item} with unbreaking 15
+        enchant {_item} with fire aspect 2
+        enchant {_item} with looting 3
+        set name of {_item} to "&7&lOutcast Sword"
+        set lore of {_item} to "&7A New Sword infused with divine power", "&eRight-click to unleash ability!", "&cCooldown: 45 seconds"
+        give {_item} to {_p}
+        send "&aYou have received the &7&lOutcast Sword!"
+        send "&aGave &7&lOutcast Sword to %{_p}%!" to sender
