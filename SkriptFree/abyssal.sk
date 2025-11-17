@@ -1,0 +1,79 @@
+# ============================================
+# ⚔️ ABYSSAL SWORD - SSS+ Ultimate Edition
+# ============================================
+
+command /abyssalsword [<offlineplayer>]:
+    permission: abyssal.give
+    trigger:
+        if arg-1 is not set:
+            if sender is not player:
+                send "&cYou must specify a player when using this from console!"
+                stop
+            set {_p} to player
+        else:
+            set {_p} to arg-1
+
+        set {_item} to netherite_sword named "&5⚔ Abyssal Sword &5&l[SSS+ Ultimate]"
+        enchant {_item} with sharpness 15
+        enchant {_item} with unbreaking 20
+        enchant {_item} with fire aspect 3
+        enchant {_item} with looting 7
+        set lore of {_item} to "&7Right-click to unleash &c&lAbyssal Power!", "&cCooldown: &d&l120&c seconds"
+        give {_item} to {_p}
+        send "&dGave &5Abyssal Sword &dto %{_p}%!" to sender
+        send "&5⚔ You received the Abyssal Sword. Darkness awakens..." to {_p}
+
+
+# === Right-click Skill ===
+on right click with netherite_sword:
+    if name of player's tool is "&5⚔ Abyssal Sword &c&l[SSS+ Ultimate]":
+        if "%world of player%" is "lobby1":
+            send "&cYou can't use this ability here!" to player
+            stop
+
+        if player has permission "icebane.skill":
+            if {abyssal_cd.%player%} is set:
+                send "&c⏳ Your dark power is recharging... (%{abyssal_cd.%player%}%s left)" to player
+                stop
+
+            send "&5⚡ &dYou unleash the Abyssal energy!" to player
+
+            set {_range} to 8
+            set {_kb} to 4
+            loop all living entities in radius {_range} around player:
+                if loop-entity is not player:
+                    set {_hp} to health of loop-entity
+                    set {_damage} to {_hp} * 0.9
+                    set health of loop-entity to max(0, {_hp} - {_damage})
+                    apply poison 5 to loop-entity for 8 seconds
+                    apply weakness 3 to loop-entity for 15 seconds
+                    push loop-entity upwards with force 1.5
+                    push loop-entity away from player at speed {_kb}
+                    send "&c⚔ &fYou slashed &e%name of loop-entity% &fwith abyssal force!" to player
+
+            if player has potion effect slowness: 
+              remove slowness from player
+            if player has potion effect weakness:
+              remove weakness from player
+            if player has potion effect poison: 
+              remove poison from player
+            if player has potion effect blindness: 
+              remove blindness from player
+            if player has potion effect nausea: 
+              remove nausea from player
+            if player has potion effect wither: 
+              remove wither from player
+
+            apply strength 6 to player for 60 seconds
+            apply speed 3 to player for 60 seconds
+
+            # Cooldown
+            set {abyssal_cd.%player%} to 120
+            while {abyssal_cd.%player%} > 0:
+                wait 1 second
+                remove 1 from {abyssal_cd.%player%}
+            delete {abyssal_cd.%player%}
+            send "&a⚔ Your Abyssal Sword has recharged!" to player
+
+        else:
+            send "&4[Ability Locked] &7You need &c&lWRAITH&f Ranks &7to use this sword!" to player
