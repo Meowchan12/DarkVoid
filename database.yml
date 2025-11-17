@@ -1,0 +1,58 @@
+superbox:
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: WHITE_SHULKER_BOX
+    meta:
+      ==: ItemMeta
+      meta-type: TILE_ENTITY
+      display-name: '{"text":"","extra":[{"text":"Super Box","strikethrough":false,"obfuscated":false,"bold":true,"italic":false,"underlined":false,"color":"gold"}]}'
+      internal: H4sIAAAAAAAA/9WWzW7UMBSF3WZmmGaHKIwKCKGs2xfIip8NCxZIXSIUOc5NYsWxg30NRVXfoeJHvC5OZ5jEowkVVYjEbuLr4zk+343jkJCQrFKhWHUGEjl+OWOqbpR0D+aIPKi5BKZpjjFTEql70iFxmoDMjFBI2t9kxhHqJTnkGXncCSRgCdqVkhJEDRiQOVNWtpqDkITd34TkYaeyMtVAK5oKIMt+gVmDqk4krYF8u4zgAjWN4veXUapEFsWoLZxGTAmlozgq2rHTiCMVnEVxToVxVZXm1jCKkG2HDGpeOaNa2aLcjqJb3a1ybhvQz9/cuHerWZmBFs7Qb/nVh+3U6CokjzqzIFlJJdbr7S0EfAJhArLqZtCPliY0z7l0mbeRBP3NajAN1xS5kq4WBOS4qzVaIbBNad4SIB2NA4/Gs300WAkGG+FiGJHIzymJvN7uYBQqg9n+GclJV8u5hsTTBjtcDj0uT/dxEVAUXBZmRCo/pqTyduP/v2ESeExO9jFJlcIxgXydEsir1vzYNIyyIjENQLZOfIxDa+aBeLIPRMNZRS+GT6zBxL9Pmfi7tcuxMwf3mWDczWs/FAuvtOk699650nFA7vdeAKXRSmjz3cl77uW92pf3nbK+njLrlyPl3LvimJLqRoIx64PmLgR2kl7cfjkypXJG/j7sSe9A5zcm/2lfz4dTnQ309e6Bfu/2vi6V19d99XJI3QYJMmFUu0Osp37RVx956l4Mn13WOkktq/wrcGv9F3xE245+CwAA
+      blockMaterial: WHITE_SHULKER_BOX
+dangerous:
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: RED_SHULKER_BOX
+    meta:
+      ==: ItemMeta
+      meta-type: TILE_ENTITY
+      display-name: '{"text":"","extra":[{"text":"Dangerous Box","strikethrough":false,"obfuscated":false,"bold":true,"italic":false,"underlined":false,"color":"red"}]}'
+      internal: H4sIAAAAAAAA/1VR20oDMRCdXpS6IILXV8lz+wP7JOJfiEg2O9uGZmdKMrFK6Wf4v85SbNq3zLlxZlIBVPDUBHbrBZJ4+Vk47jdMOqQruOs9oYu2k9oxidUpVgAwnsA0BRZ9qn/qBfsZjH0L18XQ8HYCF44zDbJRBVVJruChCDM1Ee3aNgE17LEQSG5lSfqD4zLgF4Y0gZui2PAWo6bfn6FdsD0eWt4W1FPnSRccygDMThu4nIT7TxpsvzuD3xKtqd93puHQmlpixrlxHDia2iwHbG682OCdqTsbkrLcdDk5K9geoSTRr1FWkfNydURF0zXlzdISlUnPr7xNmpepxRi00n/A/uMoNnstXU4+Ojv5yeI2xrOjvwz/8wdIVQWc4wEAAA==
+      blockMaterial: RED_SHULKER_BOX
+icebanebox:
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: ORANGE_SHULKER_BOX
+    meta:
+      ==: ItemMeta
+      meta-type: TILE_ENTITY
+      display-name: '{"text":"","extra":[{"text":"Icebane Box ","strikethrough":false,"obfuscated":false,"bold":true,"italic":false,"underlined":false,"color":"aqua"},{"text":"[","bold":false,"italic":false,"color":"white"},{"text":"SSS","bold":true,"italic":false,"color":"red"},{"text":"]","bold":false,"italic":false,"color":"white"}]}'
+      internal: H4sIAAAAAAAA/9WVz27UMBDGZ5vdZZsDf1SgAqGq8rl9gT1VcKESb4CQ5TiTxFrHDvaEgqq+BQjxtnWaZZO0C5VQtBU5JR7P5/H3m9gxQAyHibZydYqGFH07lbasrAkffh8OSmVQOpHRUlpDIny5GEJOBFOvLUHzDlNFWC5gT6XwukswSAW6EOIF6hIpgpm0tWlyJjHE3TIxvOiyapM4FCuRaIRFPyBrT7bkRpQIPy4ZfiUn2PLjJUusTtmSXI0nTFptHVsy8bkW7IQpElpJtsyE9iFqk6z2UhCmmyFPTq1Coc7WebEZpaAeVM4lJsLg8fub+oNebVJ0OpT0W+Dq02Yyu4rhZVcuGlkIQ2W7wbnGL6h9BIfdjKZGLrJMmeB6Y0rU365DXyknSFkTYlEEz7tY5SyhXIfmUd/0RAtPfDBh2kCCDthkAOxoGzBZoKdKB6dGhPZrt9DebfYwCrh7PP5HdrfQ7A3QvNmGRmOeK5P7EcH83C2YD+sd/D9YogGWV9uwJNbSmEy+75bJ26b8UYD03MlQNPbwIBQk89bznRxx0wGw4ztFY8rz4CkaLqpK9w+5s77MbByZ+Z/aJ1MOL6xbcReu38EFeXarfQ7uJvkJPMm0ygviad26GA1dePRA6y4eaN39wbqPO4lSyL9dZPc39dNe94V/Vxbt2dLr1wtlUp7Uzt/0TQTPulDoD9/e8LNByvocaP+MI2ifa6VuV3eQCQAA
+      blockMaterial: ORANGE_SHULKER_BOX
+superchest:
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: CHEST
+    meta:
+      ==: ItemMeta
+      meta-type: TILE_ENTITY
+      internal: H4sIAAAAAAAA/53MSw6CMAAE0JGCQlX8oOLnDFzAlVeBikkjbQ3Uhbe3rtia2c0k80YCEmXTOfWsWuu1/1TKmZezoQwZCqNtq/r64a/KWV+H1ksAF4F46JwPMfhY+9akiPQd+QiacCKQKPe2v90NGNGEQRGDBINiBiUMmjJoxqCUQRmDJIPmDFowaMmgnEErBq0ZtGHQlkEFg3YM2jPowKCSQUcGnRh0/h8BX1SrlWHRBQAA
+      blockMaterial: CHEST
+freechristmas:
+  item:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: NETHERITE_SWORD
+    meta:
+      ==: ItemMeta
+      meta-type: UNSPECIFIC
+      display-name: '{"text":"","extra":[{"text":"[","strikethrough":false,"obfuscated":false,"bold":false,"italic":false,"underlined":false,"color":"white"},{"text":"FREE","bold":true,"italic":false,"color":"red"},{"text":"]","bold":false,"italic":false,"color":"white"},{"text":"
+        Christmas Sword","bold":true,"italic":false,"color":"white"}]}'
+      enchants:
+        minecraft:fire_aspect: 2
+        minecraft:looting: 5
+        minecraft:sharpness: 4
+        minecraft:unbreaking: 20
